@@ -1,0 +1,293 @@
+<!doctype html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="utf-8">
+  <title>Medicamento Biológico e Biossimilar</title>
+  <base href="/">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="index, follow">
+  <meta name="Description"
+    content="Prototipo sobre Medicamento Biológico e Biossimilar">
+  <meta name="author" content="Arq. Vanderson Paim e Camila Sampaio">
+  <meta name="email" content="vandersonsilvapaim@gmail.com,info@camilasampaio.com">
+  <meta name="keywords"
+    content=" Match, RIM, Maintain, ORG, Sync, Integrate, ISO, Regulatory Information Management, pharmacovigilance, units of measurement, ISO 11616, units of presentation,">
+  <!-- <link rel="apple-touch-icon" sizes="57x57" href="apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-icon-180x180.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="android-icon-96x96.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="android-chrome-96x96.png">
+  <link rel="icon" type="image/png" sizes="194x194" href="favicon-194x194.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="android-chrome-192x192.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" /> -->
+  <link rel="manifest" href="manifest.json">
+  <link rel="manifest" href="biologicos.webmanifest">
+  <!-- <link rel="mask-icon" href="safari-pinned-tab.svg" color="#ffffff"> -->
+  <meta name="apple-mobile-web-app-title" content="Biologicos">
+  <meta name="application-name" content="Biologicos">
+  <meta name="msapplication-TileColor" content="#15a2dc">
+  <meta name="msapplication-TileImage" content="mstile-144x144.png">
+  <meta name="theme-color" content="#ffffff">
+  <link rel="dns-prefeth" href="//biologicos.org/" />
+  <link rel="preconnect" href="ngsw-worker.js" as="script">
+  <link rel="preconnect" href="https://biologicos.org/#/home">
+  <link rel="canonical" href="https://biologicos.org" />
+  <link rel="preload" href="material-icons.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="1Ptug8zYS_SKggPNyC0ITw.woff2" as="font" type="font/woff2" crossorigin>
+
+  <style type="text/css">
+    html {
+      box-sizing: border-box;
+    }
+
+    *,
+    *:before,
+    *:after {
+      box-sizing: inherit
+    }
+
+    html {
+      -ms-text-size-adjust: 100%;
+      -webkit-text-size-adjust: 100%
+    }
+
+    body {
+      background: #fff;
+      text-transform: none;
+      font-variant: normal;
+      font-weight: 400;
+      font-family: SF Pro Text, SF Pro Icons, Helvetica Neue, Helvetica, Arial, sans-serif;
+      font-size: 16px;
+      font-style: normal;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+      line-height: 1.47059;
+      letter-spacing: -.022em;
+      color: #333;
+      margin: 0px;
+      width: 100% !important;
+      height: 100% !important;
+      /* position: absolute;
+      overflow: unset; */
+    }
+
+    input[type=number]::-webkit-inner-spin-button,
+    input[type=number]::-webkit-outer-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+
+    /* Let's get this party started */
+    ::-webkit-scrollbar {
+      background: transparent;
+      position: absolute;
+      max-width: 10px;
+      height: 2px;
+    }
+
+    ::-webkit-scrollbar:hover {
+      background: #b0b0b027;
+      position: absolute;
+    }
+
+    ::-webkit-scrollbar:window-inactive {
+      width: 0px;
+    }
+
+    /* Track */
+    ::-webkit-scrollbar-track {
+      background: transparent;
+      position: absolute;
+    }
+
+    /* Handle */
+    ::-webkit-scrollbar-thumb {
+      background-color: #aaa;
+      border-radius: 6px;
+      position: absolute;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+      background-color: #727070;
+      border-radius: 6px;
+      position: absolute;
+    }
+
+    @-webkit-keyframes rotator {
+      0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+      }
+
+      100% {
+        -webkit-transform: rotate(270deg);
+        transform: rotate(270deg);
+      }
+    }
+
+    @keyframes rotator {
+      0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+      }
+
+      100% {
+        -webkit-transform: rotate(270deg);
+        transform: rotate(270deg);
+      }
+    }
+
+    .path {
+      stroke-dasharray: 187;
+      stroke-dashoffset: 0;
+      -webkit-transform-origin: center;
+      transform-origin: center;
+      -webkit-animation: dash 1.4s ease-in-out infinite, colors 5.6s ease-in-out infinite;
+      animation: dash 1.4s ease-in-out infinite, colors 5.6s ease-in-out infinite;
+    }
+
+    @-webkit-keyframes colors {
+      0% {
+        stroke: #4285F4;
+      }
+
+      25% {
+        stroke: #0200de;
+      }
+
+      50% {
+        stroke: #00eef7;
+      }
+
+      75% {
+        stroke: #009a29;
+      }
+
+      100% {
+        stroke: #09ed00;
+      }
+    }
+
+    @keyframes colors {
+      0% {
+        stroke: #4285F4;
+      }
+
+      25% {
+        stroke: #0200de;
+      }
+
+      50% {
+        stroke: #00eef7;
+      }
+
+      75% {
+        stroke: #009a29;
+      }
+
+      100% {
+        stroke: #09ed00;
+      }
+    }
+
+    @-webkit-keyframes dash {
+      0% {
+        stroke-dashoffset: 187;
+      }
+
+      50% {
+        stroke-dashoffset: 46.75;
+        -webkit-transform: rotate(135deg);
+        transform: rotate(135deg);
+      }
+
+      100% {
+        stroke-dashoffset: 187;
+        -webkit-transform: rotate(450deg);
+        transform: rotate(450deg);
+      }
+    }
+
+    @keyframes dash {
+      0% {
+        stroke-dashoffset: 187;
+      }
+
+      50% {
+        stroke-dashoffset: 46.75;
+        -webkit-transform: rotate(135deg);
+        transform: rotate(135deg);
+      }
+
+      100% {
+        stroke-dashoffset: 187;
+        -webkit-transform: rotate(450deg);
+        transform: rotate(450deg);
+      }
+    }
+  </style>
+
+</head>
+
+<link rel="preload" href="styles.css" as="style">
+<link rel="stylesheet" href="styles.css">
+
+<body>
+
+  <app-root>
+    <div style=" height: 100%; display: flex !important; align-items: center; justify-content: center;">
+      <svg style="-webkit-animation: rotator 1.4s linear infinite; animation: rotator 1.4s linear infinite;"
+        width="65px" height="65px" viewBox="0 0 66 66" xmlns="http://www.w3.org/2000/svg">
+        <circle class="path" fill="none" stroke-width="6" stroke-linecap="round" cx="33" cy="33" r="30"></circle>
+      </svg>
+    </div>
+  </app-root>
+
+  <script type="application/ld+json">{
+    "@context": "http://schema.org",
+    "@type": "WebSite",
+    "name": "Biologicos",
+    "alternateName": "Biologicos Brasil",
+    "url": "https://biologicos.org/",
+    "description": "Portal é um espaço de acesso as informações ,
+    "about": "O Biologicos consiste em um ...",
+    "image": "https://biologicos.org/icon.png",
+    "keywords": " Match, RIM, Maintain, ORG, Sync, Integrate, Regulatory Information Management, pharmacovigilance, units of measurement, ISO 11616, units of presentation,",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "https://biologicos.org/#/search?q={q}",
+      "query-input": "required name=q"
+    },
+    "author": {
+      "@type": "Person",
+      "name": "Vanderson Paim",
+      "email": "vpaim.ti@gmail.com",
+      "address": "São Paulo - SP - Brasil",
+      "jobTitle": "Architect of Software for Web",
+      "url": "https://www.linkedin.com/in/vandersonpaim/"
+    }
+  }</script>
+
+  <noscript>
+    <div style=" height: 100%; display: flex !important; align-items: center; justify-content: center;">
+      <svg style="-webkit-animation: rotator 1.4s linear infinite; animation: rotator 1.4s linear infinite;"
+        width="65px" height="65px" viewBox="0 0 66 66" xmlns="http://www.w3.org/2000/svg">
+        <circle class="path" fill="none" stroke-width="6" stroke-linecap="round" cx="33" cy="33" r="30"></circle>
+      </svg>
+    </div>
+    Please enable JavaScript to continue using this application.
+  </noscript>
+<script src="/medicamentosbiologicos/runtime-es2015.d475c4d4a694396c3800.js" type="module"></script><script src="/medicamentosbiologicos/runtime-es5.d475c4d4a694396c3800.js" nomodule defer></script><script src="/medicamentosbiologicos/polyfills-es5.42a1af587349bc860e49.js" nomodule defer></script><script src="/medicamentosbiologicos/polyfills-es2015.b495621c73d2d6770542.js" type="module"></script><script src="/medicamentosbiologicos/vendor-es2015.27b3f989285459788382.js" type="module"></script><script src="/medicamentosbiologicos/vendor-es5.27b3f989285459788382.js" nomodule defer></script><script src="/medicamentosbiologicos/main-es2015.8d74d19845a732792dce.js" type="module"></script><script src="/medicamentosbiologicos/main-es5.8d74d19845a732792dce.js" nomodule defer></script></body>
+
+</html>

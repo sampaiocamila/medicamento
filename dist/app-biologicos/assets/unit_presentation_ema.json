@@ -1,0 +1,26 @@
+[
+    {
+        "id": "200000002108",
+        "description": "Ampola"
+    },
+    {
+        "id": "200000002109",
+        "description": "Blister"
+    },
+    {
+        "id": "200000002164",
+        "description": "Infusão"
+    },
+    {
+        "id": "200000002165",
+        "description": "Injeção"
+    },
+    {
+        "id": "200000002166",
+        "description": "Bag"
+    },
+    {
+        "id": "200000010635",
+        "description": "Box"
+    }
+]

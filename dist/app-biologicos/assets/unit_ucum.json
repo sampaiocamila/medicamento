@@ -1,0 +1,310 @@
+[
+    {
+        "ucum_code": "g.m",
+        "description_of_the_unit": "gram meter"
+    },
+    {
+        "ucum_code": "g/kg/(8.h)",
+        "description_of_the_unit": "gram per kilogram per 8 hour "
+    },
+    {
+        "ucum_code": "g/(100.g)",
+        "description_of_the_unit": "gram per 100 gram"
+    },
+    {
+        "ucum_code": "g/(12.h)",
+        "description_of_the_unit": "gram per 12 hour"
+    },
+    {
+        "ucum_code": "g/(24.h)",
+        "description_of_the_unit": "gram per 24 hour"
+    },
+    {
+        "ucum_code": "g/(3.d)",
+        "description_of_the_unit": "gram per 3 days"
+    },
+    {
+        "ucum_code": "g/(4.h)",
+        "description_of_the_unit": "gram per 4 hour"
+    },
+    {
+        "ucum_code": "g/(48.h)",
+        "description_of_the_unit": "gram per 48 hour"
+    },
+    {
+        "ucum_code": "g/(5.h)",
+        "description_of_the_unit": "gram per 5 hour"
+    },
+    {
+        "ucum_code": "g/(6.h)",
+        "description_of_the_unit": "gram per 6 hour"
+    },
+    {
+        "ucum_code": "g/(72.h)",
+        "description_of_the_unit": "gram per 72 hour"
+    },
+    {
+        "ucum_code": "g/cm3",
+        "description_of_the_unit": "gram per cubic centimeter"
+    },
+    {
+        "ucum_code": "g/d",
+        "description_of_the_unit": "gram per day"
+    },
+    {
+        "ucum_code": "g/dL",
+        "description_of_the_unit": "gram per deciliter"
+    },
+    {
+        "ucum_code": "g/g",
+        "description_of_the_unit": "gram per gram"
+    },
+    {
+        "ucum_code": "g/h",
+        "description_of_the_unit": "gram per hour"
+    },
+    {
+        "ucum_code": "g/h/m2",
+        "description_of_the_unit": "gram per hour per square meter"
+    },
+    {
+        "ucum_code": "g/kg ",
+        "description_of_the_unit": "gram per kilogram"
+    },
+    {
+        "ucum_code": "g/kg/d",
+        "description_of_the_unit": "gram per kilogram per day"
+    },
+    {
+        "ucum_code": "g/kg/h",
+        "description_of_the_unit": "gram per kilogram per hour"
+    },
+    {
+        "ucum_code": "g/kg/min",
+        "description_of_the_unit": "gram per kilogram per minute"
+    },
+    {
+        "ucum_code": "g/L",
+        "description_of_the_unit": "gram per liter"
+    },
+    {
+        "ucum_code": "g/mg",
+        "description_of_the_unit": "gram per milligram"
+    },
+    {
+        "ucum_code": "g/mL",
+        "description_of_the_unit": "gram per milliliter"
+    },
+    {
+        "ucum_code": "g/min",
+        "description_of_the_unit": "gram per minute"
+    },
+    {
+        "ucum_code": "g/cm2",
+        "description_of_the_unit": "gram per square centimeter"
+    },
+    {
+        "ucum_code": "g/m2",
+        "description_of_the_unit": "gram per square meter"
+    },
+    {
+        "ucum_code": "mg",
+        "description_of_the_unit": "milligram"
+    },
+    {
+        "ucum_code": "mg/(10.h)",
+        "description_of_the_unit": "milligram per 10 hour"
+    },
+    {
+        "ucum_code": "mg/(12.h)",
+        "description_of_the_unit": "milligram per 12 hour"
+    },
+    {
+        "ucum_code": "mg/(2.h)",
+        "description_of_the_unit": "milligram per 2 hour"
+    },
+    {
+        "ucum_code": "mg/(24.h)",
+        "description_of_the_unit": "milligram per 24 hour"
+    },
+    {
+        "ucum_code": "mg/(6.h)",
+        "description_of_the_unit": "milligram per 6 hour"
+    },
+    {
+        "ucum_code": "mg/(72.h)",
+        "description_of_the_unit": "milligram per 72 hour"
+    },
+    {
+        "ucum_code": "mg/(8.h)",
+        "description_of_the_unit": "milligram per 8 hour"
+    },
+    {
+        "ucum_code": "mg/m3",
+        "description_of_the_unit": "milligram per cubic meter"
+    },
+    {
+        "ucum_code": "mg/d",
+        "description_of_the_unit": "milligram per day"
+    },
+    {
+        "ucum_code": "mg/dL",
+        "description_of_the_unit": "milligram per deciliter"
+    },
+    {
+        "ucum_code": "mg/g",
+        "description_of_the_unit": "milligram per gram"
+    },
+    {
+        "ucum_code": "mg/h",
+        "description_of_the_unit": "milligram per hour"
+    },
+    {
+        "ucum_code": "mg/kg",
+        "description_of_the_unit": "milligram per kilogram"
+    },
+    {
+        "ucum_code": "mg/kg/(8.h)",
+        "description_of_the_unit": "milligram per kilogram per 8 hour"
+    },
+    {
+        "ucum_code": "mg/kg/d",
+        "description_of_the_unit": "milligram per kilogram per day"
+    },
+    {
+        "ucum_code": "mg/kg/h",
+        "description_of_the_unit": "milligram per kilogram per hour"
+    },
+    {
+        "ucum_code": "mg/kg/min",
+        "description_of_the_unit": "milligram per kilogram per minute"
+    },
+    {
+        "ucum_code": "mg/L",
+        "description_of_the_unit": "milligram per liter"
+    },
+    {
+        "ucum_code": "mg/mg",
+        "description_of_the_unit": "milligram per milligram"
+    },
+    {
+        "ucum_code": "mg/mL",
+        "description_of_the_unit": "milligram per milliliter"
+    },
+    {
+        "ucum_code": "mg/min",
+        "description_of_the_unit": "milligram per minute"
+    },
+    {
+        "ucum_code": "mg/m2",
+        "description_of_the_unit": "milligram per square meter"
+    },
+    {
+        "ucum_code": "mL",
+        "description_of_the_unit": "milliliter"
+    },
+    {
+        "ucum_code": "mL/(10.h)",
+        "description_of_the_unit": "milliliter per 10 hour"
+    },
+    {
+        "ucum_code": "mL/(12.h)",
+        "description_of_the_unit": "milliliter per 12 hour"
+    },
+    {
+        "ucum_code": "mL/(2.h)",
+        "description_of_the_unit": "milliliter per 2 hour"
+    },
+    {
+        "ucum_code": "mL/(24.h)",
+        "description_of_the_unit": "milliliter per 24 hour"
+    },
+    {
+        "ucum_code": "mL/(4.h)",
+        "description_of_the_unit": "milliliter per 4 hour"
+    },
+    {
+        "ucum_code": "mL/(5.h)",
+        "description_of_the_unit": "milliliter per 5 hour"
+    },
+    {
+        "ucum_code": "mL/(6.h)",
+        "description_of_the_unit": "milliliter per 6 hour"
+    },
+    {
+        "ucum_code": "mL/(72.h)",
+        "description_of_the_unit": "milliliter per 72 hour"
+    },
+    {
+        "ucum_code": "mL/(8.h)",
+        "description_of_the_unit": "milliliter per 8 hour"
+    },
+    {
+        "ucum_code": "mL/(8.h)/kg",
+        "description_of_the_unit": "milliliter per 8 hour per kilogram"
+    },
+    {
+        "ucum_code": "mL/d",
+        "description_of_the_unit": "milliliter per day"
+    },
+    {
+        "ucum_code": "mL/dL",
+        "description_of_the_unit": "milliliter per deciliter"
+    },
+    {
+        "ucum_code": "mL/h",
+        "description_of_the_unit": "milliliter per hour"
+    },
+    {
+        "ucum_code": "mL/kg",
+        "description_of_the_unit": "milliliter per kilogram"
+    },
+    {
+        "ucum_code": "mL/kg/(8.h)",
+        "description_of_the_unit": "milliliter per kilogram per 8 hour"
+    },
+    {
+        "ucum_code": "mL/kg/d",
+        "description_of_the_unit": "milliliter per kilogram per day"
+    },
+    {
+        "ucum_code": "mL/kg/h",
+        "description_of_the_unit": "milliliter per kilogram per hour"
+    },
+    {
+        "ucum_code": "mL/kg/min",
+        "description_of_the_unit": "milliliter per kilogram per minute"
+    },
+    {
+        "ucum_code": "mL/mm",
+        "description_of_the_unit": "milliliter per millimeter"
+    },
+    {
+        "ucum_code": "mL/min",
+        "description_of_the_unit": "milliliter per minute"
+    },
+    {
+        "ucum_code": "mL/min/m2",
+        "description_of_the_unit": "milliliter per minute per square meter"
+    },
+    {
+        "ucum_code": "mL/s",
+        "description_of_the_unit": "milliliter per second"
+    },
+    {
+        "ucum_code": "mL/m2",
+        "description_of_the_unit": "milliliter per square meter"
+    },
+    {
+        "ucum_code": "mm",
+        "description_of_the_unit": "millimeter"
+    },
+    {
+        "ucum_code": "mm/h",
+        "description_of_the_unit": "millimeter per hour"
+    },
+    {
+        "ucum_code": "mm/min",
+        "description_of_the_unit": "millimeter per minute"
+    }
+]
