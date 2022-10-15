@@ -47,10 +47,7 @@
     "ngcc_jspdf": "ngcc --source ./node_modules/jspdf/dist --properties es2015 browser module main --first-only --create-ivy-entry-points",
     "postinstall": "npm run ngcc_jspdf"
   },
-  "engines": {
-    "node": "16.18.0",
-    "npm": "8.19.2"
-  },
+
   "dependencies": {
     "@angular-devkit/build-optimizer": "0.901.11",
     "@angular/animations": "10.0.3",
