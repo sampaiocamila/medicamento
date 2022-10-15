@@ -1,0 +1,105 @@
+<div class="division">
+  <div class="block m6 s12">
+
+    <mat-card style="margin: 7px;">
+      <mat-card-content>
+        <div class="division">
+          <p class="hraleway" style="color: #383838; padding: 0px 0px 7px 0px;">Informações do Paciente</p>
+        </div>
+        <div class="division">
+          <div class="block m2" style="display: flex;">
+            <img [alt]="_pacienteimg" [src]="_pacienteimg" class="animate-fading"
+              style="margin: 0px auto; object-fit: cover; width: 105px; height: 105px; border-radius: 50%; box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12);">
+          </div>
+          <div class="block m10" style="text-align: justify; padding-left: 7px;">
+
+            <p matTooltipPosition="above" matTooltip="{{_paciente_selected.nome}}"
+              style="margin: 0; white-space: nowrap; text-overflow: ellipsis; overflow: hidden; font-size: 20px; font-weight: 500; color: #000000de;">
+              <mat-form-field class="block m12" hideRequiredMarker="false" floatLabel="always"
+                *ngIf="!_paciente_selected.id">
+                <mat-label>Paciente</mat-label>
+                <input matInput type="text" placeholder="Pesquise o paciente pelo resgistro hospitalar, nome ou CPF."
+                  [formControl]="_id_pacienteCtrl" required="true" [matAutocomplete]="auto_paciente" #input_paciente
+                  (blur)="blur_paciente()">
+                <mat-autocomplete autoActiveFirstOption #auto_paciente="matAutocomplete"
+                  (optionSelected)="selected_paciente($event)">
+                  <mat-option value="{{list_item.id}}" *ngFor="let list_item of filtered_paciente | async"
+                    matTooltip="{{list_item.nome}} - {{list_item.cpf}}">
+                    {{list_item.nome}} - {{list_item.cpf}}
+                  </mat-option>
+                </mat-autocomplete>
+
+                <mat-hint style="font-size: 12px; color: #f44336;"
+                  *ngIf="_id_pacienteCtrl?.touched && _id_pacienteCtrl?.invalid">
+                  Paciente obrigatório
+                </mat-hint>
+              </mat-form-field>
+              <span matRipple matTooltipPosition="above" *ngIf="_paciente_selected.id && !enable">
+                {{_paciente_selected.nome}}
+              </span>
+              <span *ngIf="enable">
+                <span matRipple matTooltipPosition="above" matTooltip="Editar Paciente" *ngIf="_paciente_selected.id"
+                  [matMenuTriggerFor]="editarpaciente">
+                  {{_paciente_selected.nome}}
+                  <span style="position: relative;">
+                    <mat-icon style="font-size: 28px; color: #383838; position: absolute; left: 7px; ">
+                      edit
+                    </mat-icon>
+                  </span>
+                </span>
+                <mat-menu #editarpaciente>
+                  <button mat-menu-item matSuffix style="color: #5703b8" (click)="remove_paciente()"
+                    matTooltipPosition="above" matTooltip="Selecionar outro paciente">
+                    <mat-icon>cached</mat-icon>Selecionar outro paciente
+                  </button>
+                </mat-menu>
+              </span>
+            </p>
+
+            <p matTooltipPosition="above" matTooltip="{{_paciente_selected.reg_hosp}}"
+              style="margin: 0; white-space: nowrap; text-overflow: ellipsis; overflow: hidden; font-size: 14px; color: #0000008a;">
+              Registro Hospitalar: {{_paciente_selected.reg_hosp}}
+            </p>
+
+            <p matTooltipPosition="above" matTooltip="{{_paciente_selected.cpf}}"
+              style="margin: 0; white-space: nowrap; text-overflow: ellipsis; overflow: hidden; font-size: 14px; color: #0000008a;">
+              CPF: {{_paciente_selected.cpf}}
+            </p>
+
+            <p matTooltipPosition="above"
+              matTooltip="{{_paciente_selected.genero}}, {{_paciente_selected.peso}}, {{_paciente_selected.idade}} Anos - {{_paciente_selected.dt_nascimento}}"
+              style="margin: 0; white-space: nowrap; text-overflow: ellipsis; overflow: hidden; font-size: 14px;  color: #0000008a;">
+              Genero: {{_paciente_selected.genero}}, Peso: {{_paciente_selected.peso}}, {{_paciente_selected.idade}}
+              Anos -
+              {{_paciente_selected.dt_nascimento}}
+            </p>
+
+            <p matTooltipPosition="above" matTooltip="{{_paciente_selected.endereco}}"
+              style=" margin: 0; white-space: nowrap; text-overflow: ellipsis; overflow: hidden; font-size: 14px;  color: #0000008a;">
+              Endereço:
+              {{_paciente_selected.endereco}}
+            </p>
+
+            <p matTooltipPosition="above" matTooltip="{{_paciente_selected.telefone}}"
+              style="padding-bottom: 7px; margin: 0; white-space: nowrap; text-overflow: ellipsis; overflow: hidden; font-size: 14px;  color: #0000008a;">
+              Telefone:
+              {{_paciente_selected.telefone}}
+            </p>
+
+          </div>
+        </div>
+        <mat-divider></mat-divider>
+        <div class="division" *ngIf="_paciente_selected.id">
+          <section style="padding-top: 15px;">
+            <button (click)="intercambialidade()" mat-stroked-button style="margin-right: 7px;">Intercambialidade</button>
+            <button (click)="rastreabilidade()" mat-stroked-button style="margin-right: 7px;">Rastreabilidade</button>
+          </section>
+        </div>
+      </mat-card-content>
+    </mat-card>
+
+  </div>
+  <div class="block m6 s12" *ngIf="responsavel !== null">
+    <responsavel [responsavel]="responsavel"></responsavel>
+  </div>
+</div>

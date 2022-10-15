@@ -1,0 +1,80 @@
+<form [formGroup]="fb" class="form-margin" *ngIf="fb">
+
+  <div class="division" style="display: flex;">
+    <div class="block m10" style="margin: auto;">
+      <div class="division">
+
+        <responsavel [responsavel]="responsavel"></responsavel>
+
+      </div>
+      <div class="division">
+        <h2 class="raleway" style="color: #6959CD;">
+          Informações da prescrição e dispensação realizada
+        </h2>
+
+        <paciente-medico [paciente]="_paciente_medico"></paciente-medico>
+
+        <medicamento [medicamento]="medicamento_input"></medicamento>
+
+      </div>
+
+      <div class="division">
+        <h2 class="raleway" style="color: #6959CD;">
+          Informações da Administração realizada
+        </h2>
+        <div class="division">
+          <div class="block m6 s12">
+            <responsavel [responsavel]="administracao_input?.responsavel"></responsavel>
+          </div>
+          <div class="block m6 s12">
+            <administracao-info [administracao]="administracao_input"></administracao-info>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="division">
+        <div class="division">
+          <h2 class="raleway" style="color: #6959CD;">
+            Controle da Notificação
+          </h2>
+        </div>
+        <!--
+          evoluir para adicionar varias reações com informação de inicio e e usuario que reporta, quem sabe integrar como o vigimed via api .
+          https://primaryreporting.who-umc.org/Reporting/Report?ReporterID=25ba563e-f7f9-4d9d-b9cd-61a1d9589d39 -->
+        <div class="division">
+          <mat-form-field class="block m12" hideRequiredMarker="false" floatLabel="always">
+            <mat-label>Descreva a situação</mat-label>
+            <textarea matInput required formControlName="situacao"
+              placeholder="Descreva com suas palavras qualquer sintoma ou efeito indesejado que considere ser causado pelo(s) medicamento(s)."
+              cdkTextareaAutosize cdkAutosizeMinRows="2" cdkAutosizeMaxRows="3"></textarea>
+            <mat-hint style="font-size: 12px; color: #f44336;" *ngIf="fb.get('situacao')?.invalid">
+              Situação obrigatoria
+            </mat-hint>
+          </mat-form-field>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</form>
+
+<div id="actions"
+  style="align-items: center; display: flex; flex-direction: row; flex-wrap: wrap; justify-content: center; margin-top: 15px;">
+  <div style="margin: 0 auto;">
+
+    <button mat-button style="color: #1d9bbb" *ngIf="fb != null" (click)="back_stepper()" matTooltipPosition="above"
+      matTooltip="Voltar">
+      <mat-icon>arrow_back</mat-icon>
+      <strong>Voltar</strong>
+    </button>
+
+    <button mat-raised-button style="color: #1dbb3f" (click)="next_stepper()" matTooltipPosition="above"
+      matTooltip="Notificar">
+      <mat-icon>done_outline</mat-icon>
+      <strong>Registrar Notificação</strong>
+    </button>
+
+  </div>
+</div>

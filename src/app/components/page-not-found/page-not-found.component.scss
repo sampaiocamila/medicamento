@@ -1,0 +1,87 @@
+// mixins
+@mixin breakpoint($point) {
+  @if $point==mobile {
+    @media (max-width: 480px) and (min-width: 320px) {
+      @content;
+    }
+  }
+}
+
+// keyrames
+@keyframes floating {
+  from {
+    transform: translateY(0px);
+  }
+
+  65% {
+    transform: translateY(15px);
+  }
+
+  to {
+    transform: translateY(-0px);
+  }
+}
+
+.logo-404 {
+  position: absolute;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+  top: 16vmin;
+  width: 30vmin;
+  animation: floating 5s infinite ease-in-out;
+
+  @include breakpoint(mobile) {
+    top: 45vmin;
+  }
+}
+
+.meteor {
+  position: absolute;
+  width: 200px;
+  right: 2vmin;
+  top: 16vmin;
+  animation: floating 5s infinite ease-in-out;
+}
+
+.btn-home {
+  border: 1px solid white;
+  color: white;
+  padding: 12px;
+  text-decoration: none;
+  border-radius: 6px;
+  position: absolute;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  z-index: 2;
+  left: 0;
+  right: 0;
+  top: 36vmin;
+  width: 40vmin;
+  animation: floating 5s infinite ease-in-out;
+
+  &:hover {
+    background: white;
+    color: #4d007d;
+  }
+
+  @include breakpoint(mobile) {
+    font-size: 3.5vmin;
+    top: 65vmin;
+  }
+}
+
+.astronaut {
+  position: absolute;
+  top: 18vmin;
+  left: 10vmin;
+  height: 30vmin;
+  animation: floating 3s infinite ease-in-out;
+
+  @include breakpoint(mobile) {
+    top: 2vmin;
+  }
+}

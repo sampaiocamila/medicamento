@@ -1,0 +1,83 @@
+<form [formGroup]="fb" class="form-margin" *ngIf="fb">
+
+  <div class="division" style="display: flex;">
+    <div class="block m10" style="margin: auto;">
+      <div class="division">
+
+        <responsavel [responsavel]="responsavel"></responsavel>
+
+      </div>
+      <div class="division">
+        <h2 class="raleway" style="color: #6959CD;">
+          Prescrição
+        </h2>
+
+        <paciente-medico [paciente]="_paciente_medico"></paciente-medico>
+
+        <medicamento [medicamento]="medicamento_input"></medicamento>
+
+      </div>
+
+      <div class="division">
+        <p>Disponível para dispensação? {{fb.value.disponivel ? 'Sim' : 'Não'}}<span style="margin-left: 7px;">
+            <button mat-button style="background-color: #03bb2b;"
+              (click)="fb.get('disponivel').setValue(true)">Sim</button>
+            <button mat-button style="margin-left: 7px; background-color: #d84b4b;"
+              (click)="fb.get('disponivel').setValue(false)">Não</button>
+          </span>
+        </p>
+      </div>
+
+      <div class="division">
+        <div class="division">
+          <h2 class="raleway" style="color: #6959CD;">
+            Controle da dispensação
+          </h2>
+        </div>
+        <mat-form-field class="block m4" hideRequiredMarker="false" floatLabel="always" style="padding-right: 7px;">
+          <mat-label>Lote</mat-label>
+          <input aria-label="Lote" matInput type="text" placeholder="Lote" formControlName="lote">
+          <mat-error align="end" *ngIf="fb.get('lote')?.invalid">Lote obrigatoria</mat-error>
+        </mat-form-field>
+        <mat-form-field class="block m4" hideRequiredMarker="false" floatLabel="always">
+          <mat-label>Validade</mat-label>
+          <input aria-label="Validade" matInput type="text" placeholder="01/01/2031" formControlName="validade">
+          <mat-error align="end" *ngIf="fb.get('validade')?.invalid">Validade obrigatoria</mat-error>
+        </mat-form-field>
+      </div>
+
+      <div class="division" *ngIf="!fb.value.disponivel">
+
+        <mat-form-field class="block m12" hideRequiredMarker="false" floatLabel="always">
+          <mat-label>Justificativa para a troca</mat-label>
+          <input aria-label="justificativa" matInput type="text" placeholder="justificativa"
+            formControlName="justificativa">
+          <mat-error align="end" *ngIf="fb.get('justificativa')?.invalid">Lote obrigatoria</mat-error>
+        </mat-form-field>
+
+        <medicamento (action)="set_medicamento($event)"></medicamento>
+
+      </div>
+
+    </div>
+  </div>
+
+</form>
+
+<div id="actions"
+  style="align-items: center; display: flex; flex-direction: row; flex-wrap: wrap; justify-content: center; margin-top: 15px;">
+  <div style="margin: 0 auto;">
+
+    <button mat-button style="color: #1d9bbb" *ngIf="fb != null" (click)="back_stepper()" matTooltipPosition="above"
+      matTooltip="Voltar">
+      <mat-icon>arrow_back</mat-icon>
+      <strong>Voltar</strong>
+    </button>
+
+    <button mat-raised-button style="color: #1dbb3f" (click)="next_stepper()" matTooltipPosition="above"
+      matTooltip="Próximo">
+      <strong>DISPENSAR</strong>
+    </button>
+
+  </div>
+</div>

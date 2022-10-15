@@ -1,0 +1,29 @@
+language: node_js
+sudo: false
+
+node_js:
+  - "12.2.0"
+
+branches:
+  only:
+    - master
+
+addons:
+  chrome: stable
+  firefox: latest
+
+env:
+  matrix:
+    - MODE=lint
+    # - MODE=e2e
+    #- MODE=test
+
+install:
+  - npm install
+
+script:
+  - ./scripts/ci/build-and-test.sh
+
+cache:
+  directories:
+    - node_modules

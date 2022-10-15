@@ -1,0 +1,26 @@
+<div style="position: relative; min-height: 420px;">
+
+  <div class="division" style="padding: 5px 5px 0 10px; margin-left: 10%; margin-right: 10%;margin-top: 7px;">
+
+    <h2 class="hraleway" style="color: #6959CD!important;">
+      <span style="position: relative;">
+        <mat-icon style="font-size: 28px; color: #6959CD; position: absolute; left: -28px; padding-top: 3px;">
+          all_inbox
+        </mat-icon>
+      </span>
+      Dispensação <br>
+    </h2>
+
+  </div>
+
+  <div class="container-margin">
+
+    <div class="division" [class.hide]="_form" style="padding-bottom: 17px;">
+      <element-list [settings]="settings" [values]="values" (action)="elementListEvent($event)"></element-list>
+    </div>
+
+    <dispensacao-form [forms]="_form" (action)="formEvent($event)" [class.hide]="!_form"></dispensacao-form>
+
+  </div>
+
+</div>

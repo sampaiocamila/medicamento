@@ -1,0 +1,122 @@
+<div style="position: relative; min-height: 420px;">
+
+  <div class="division" style="padding: 5px 5px 0 10px">
+
+
+    <br>
+    <mat-divider></mat-divider> <!-- divisoria -->
+    <br>
+    <h2 class="raleway">
+      <mat-icon style="margin: 15px; font-size: 40px;color: #117dbb;"></mat-icon>
+      Cadastrar/atualizar medicamentos
+      <!--  -->
+    </h2>
+    <p
+      style="color: #4F4F4F;font-size: 14px; font-family: inherit; font-weight: inherit; line-height: inherit; text-align: inherit;">
+
+      <!-- informações sobre a finalidade da tela -->
+    </p>
+
+
+    <div class="division" style="padding: 5px 5px 0 10px"></div>
+    <!-- Filtro -->
+    <mat-form-field>
+      <mat-label>Filtrar por medicamento</mat-label>
+      <input matInput (keyup)="applyFilter($event)" placeholder="Digite as primeiras letras do medicamento" #input>
+    </mat-form-field>
+
+    <!-- Fim filtro -->
+
+    <!-- Se possui medicamento, apresentar cadastro com possibilidade de editar forma farmaceutica e posologia -->
+    <!-- Se NÃO possui medicamento cadastrado, apresentar o botão cadastrar novo medicamento -->
+
+    <mat-divider></mat-divider> <!-- divisoria -->
+    <div class="example-button-row">
+      <button mat-stroked-button color="primary">Cadastrar novo medicamento</button>
+    </div>
+    <br><br>
+    <mat-form-field class="division" style="width: 90%" floatLabel="always">
+      <mat-label>Medicamento</mat-label>
+
+
+      <!-- lista autocomplete para somente tipos biologicos, evoluir em um cadastro de medicamentos biologicos-->
+      <!--  ## conseguimos simular não adaptação/reação conhecida?-->
+      <!--  ## cadastrar nome comercial ou o outro nome?? ou os dois??-->
+      <input type="text" [(ngModel)]="medicamento" matInput placeholder="Digite o nome do medicamento">
+    </mat-form-field>
+    <p>{{medicamento}}</p>
+    <!-- Forma farmaceutica -->
+    <p
+      style="color: #4F4F4F;font-size: 14px; font-family: inherit; font-weight: inherit; line-height: inherit; text-align: inherit;">
+      Forma farmaceutica
+    </p>
+    <mat-form-field appearance="fill">
+      <mat-label>Dose</mat-label>
+      <mat-select>
+        <mat-option value="option">1</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Unidade</mat-label>
+      <mat-select>
+        <mat-option value="option">mg</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Apresentação</mat-label>
+      <mat-select>
+        <mat-option value="option">xxxx</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <br>
+    <!-- Posologia -->
+    <p
+      style="color: #4F4F4F;font-size: 14px; font-family: inherit; font-weight: inherit; line-height: inherit; text-align: inherit;">
+      Posologia
+    </p>
+    <mat-form-field appearance="fill">
+      <mat-label>Via de administração</mat-label>
+      <mat-select>
+        <mat-option value="option">1</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Intervalo</mat-label>
+      <mat-select>
+        <mat-option value="option">mg</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Duração</mat-label>
+      <mat-select>
+        <mat-option value="option">xxxx</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <br>
+
+    <div class="example-button-row">
+      <button mat-stroked-button color="warn">Diluir em soro fisiológico</button>
+    </div>
+    <br>
+
+    <mat-form-field class="division" style="width: 90%" floatLabel="always">
+      <mat-label>Justificativa</mat-label>
+
+      <input matInput placeholder="">
+    </mat-form-field>
+
+    <mat-form-field class="division" style="width: 90%" floatLabel="always">
+      <mat-label>Observação</mat-label>
+
+      <input matInput placeholder="">
+    </mat-form-field>
+    <br><br>
+    <div class="example-button-row">
+      <button mat-stroked-button color="primary">Cadastrar novo medicamento</button>
+    </div>
+    <br><br>
+
+    <mat-divider></mat-divider> <!-- divisoria -->
+
+  </div>

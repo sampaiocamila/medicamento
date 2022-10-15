@@ -1,0 +1,97 @@
+<mat-form-field *ngIf="_consulta_label" floatLabel="always">
+  <mat-label>{{_consulta_label}}</mat-label>
+  <input matInput (keyup)="applyFilter($event.target)" [placeholder]="_consulta_placeholder">
+</mat-form-field>
+
+<div class="mat-elevation-z8">
+  <div class="table-container">
+    <table mat-table matSort>
+
+      <ng-container [matColumnDef]="ACTIONS" stickyEnd style="background: #ffffff">
+
+        <th mat-header-cell *matHeaderCellDef>
+
+          <p style="float: right;margin-right: 10%;" *ngIf="_dataSource.data.length > 0 && show_action_name">
+            <strong style="color: #000000!important; font-size: 15px !important; "> {{show_action_name}} </strong>
+          </p>
+
+          <mat-checkbox aria-label="Selecionar" matTooltipPosition="above" matTooltip="Selecionar" style="float: right;"
+            *ngIf="show_action_remove && _dataSource.data.length > 0" (change)="$event ? masterToggle() : null"
+            [checked]="_selection.hasValue() && isAllSelected()"
+            [indeterminate]="_selection.hasValue() && !isAllSelected()">
+          </mat-checkbox>
+
+        </th>
+
+        <td mat-cell *matCellDef="let row" style="width: 130px;padding-right: 0px!important;">
+
+          <button aria-label="Visualizar" mat-icon-button style="color: #054186;" (click)="viewRow(row)"
+            *ngIf="show_action_search">
+            <mat-icon matTooltipPosition="above" matTooltip="Visualizar">search</mat-icon>
+          </button>
+
+          <button aria-label="Editar" mat-icon-button style="color: #004040;" (click)="editRow(row)"
+            *ngIf="show_action_edit">
+            <mat-icon matTooltipPosition="above" matTooltip="Editar">edit</mat-icon>
+          </button>
+
+          <mat-radio-group aria-label="radio for select an option" *ngIf="show_action_radio"
+            (change)="changeRadioSelection($event);">
+            <mat-radio-button value="false" style="margin-right: 4px; padding-right: 4px">/</mat-radio-button>
+            <mat-radio-button value="true" style="margin-left: 13px;"></mat-radio-button>
+          </mat-radio-group>
+
+          <span style="padding: 10px">
+            <mat-checkbox aria-label="Selecionar" matTooltipPosition="above" matTooltip="Selecionar"
+              (click)="$event.stopPropagation()" *ngIf="show_action_remove"
+              (change)="$event ? _selection.toggle(row) : null" [checked]="_selection.isSelected(row)">
+            </mat-checkbox>
+          </span>
+
+        </td>
+      </ng-container>
+
+      <ng-container [matColumnDef]="column" *ngFor="let column of _displayedColumns">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header style="padding-left: 5px;">
+          <strong style="color: #000000!important; font-size: 15px !important; ">
+            {{displayName[column]}}
+          </strong>
+        </th>
+        <td mat-cell *matCellDef="let element" style="padding-right: 5px;padding-left: 5px;">
+          <ng-container *ngIf="column == 'icons'; else textTemplate">
+
+            <span *ngFor="let icon of icons[element[column]]">
+              <button mat-icon-button>
+                <mat-icon matTooltipPosition="above" matTooltip="{{icon.descricao}}">{{icon.value}}</mat-icon>
+              </button>
+            </span>
+
+          </ng-container>
+          <ng-template #textTemplate>
+            {{element[column]}}
+          </ng-template>
+        </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="_columnsToDisplay;sticky: true" style="background: white!important;"></tr>
+      <tr mat-row *matRowDef="let myRowData; columns: _columnsToDisplay"></tr>
+
+    </table>
+
+    <mat-toolbar style="background: none;width: 100%;">
+      <mat-toolbar-row>
+
+        <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" showFirstLastButtons style="background: none; width: 100%;">
+        </mat-paginator>
+        <span style="float: right;">
+          <button aria-label="Remover" matTooltipPosition="above" matTooltip="Remover" mat-icon-button
+            style="color: #860505;" (click)="removeRow()" [class.disabled]="_selection.selected.length < 1"
+            *ngIf="show_action_remove && _dataSource.data.length > 0">
+            <mat-icon>delete_forever</mat-icon>
+          </button>
+        </span>
+      </mat-toolbar-row>
+    </mat-toolbar>
+
+  </div>
+</div>

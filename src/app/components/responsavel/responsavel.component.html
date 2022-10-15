@@ -1,0 +1,51 @@
+<div class="division">
+  <mat-card *ngIf="_responsavel !== null" style="margin: 7px;">
+    <mat-card-content>
+      <div class="division">
+        <p class="hraleway" style="color: #383838; padding: 0px 0px 7px 0px;">{{_responsavel.identificacao}}</p>
+      </div>
+      <div class="division">
+        <div class="block m2" style="display: flex;">
+          <img [src]="_responsavel.img" class="animate-fading"
+            style="margin: 0px auto; object-fit: cover; width: 105px; height: 105px; border-radius: 50%; box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12);">
+        </div>
+        <div class="block m10" style="text-align: justify; padding-left: 7px;">
+
+          <p
+            style="margin: 0; white-space: nowrap; text-overflow: ellipsis; overflow: hidden; font-size: 20px; font-weight: 500; color: #000000de;">
+            {{_responsavel.nome}}
+          </p>
+
+          <p
+            style="margin: 0; white-space: nowrap; text-overflow: ellipsis; overflow: hidden; font-size: 14px; color: #0000008a;">
+            Registro no conselho: {{_responsavel.conselho}}
+          </p>
+
+          <p
+            style="margin: 0; white-space: nowrap; text-overflow: ellipsis; overflow: hidden; font-size: 14px; color: #0000008a;">
+            Formação: {{_responsavel.formacao}}
+          </p>
+
+
+        </div>
+      </div>
+      <div class="division" style="padding-top: 25px;">
+        <div class="block m2" style="display: flex;">
+          <img [alt]="_responsavel.hospital.img" matTooltip="Hospital" matTooltipPosition="above"
+            [src]="_responsavel.hospital.img" class="animate-fading"
+            style="margin: 0px auto; object-fit: cover; width: 57px; height: 57px; border-radius: 10%; box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12);">
+        </div>
+        <div class="block m10" style="text-align: justify; padding-left: 7px;">
+          <h4
+            style="text-align: justify; white-space: nowrap; text-overflow: ellipsis; overflow: hidden; margin: 0px; padding-top: 7px;">
+            Hospital: {{_responsavel.hospital.nome}}
+          </h4>
+          <h4
+            style="text-align: justify; white-space: nowrap; text-overflow: ellipsis; overflow: hidden; margin: 0px; padding-top: 7px;">
+            Data: {{_responsavel.hospital.data}}, Hora: {{_responsavel.hospital.hora}}
+          </h4>
+        </div>
+      </div>
+    </mat-card-content>
+  </mat-card>
+</div>

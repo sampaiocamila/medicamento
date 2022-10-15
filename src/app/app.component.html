@@ -1,0 +1,55 @@
+<ng-container>
+
+  <mat-toolbar [style.height.px]="configService._top" [style.background]="configService._background"
+    [style.color]="configService._color" style="position: fixed; bottom: 0; top: 0; left: 0; right: 0; ">
+    <toolbar-header (toggle)="toggle()" style="width: 100%;"></toolbar-header>
+  </mat-toolbar>
+
+  <mat-sidenav-container [style.top.px]="configService._top" [style.bottom.px]="configService._bottom"
+    [style.left.px]="configService._left" [style.right.px]="configService._right" style="position: absolute;">
+
+    <mat-sidenav [style.width.px]="configService._width_menu" [class.shadow]="!configService._fixedInViewport"
+      style="display: flex; align-items: center; justify-content: center;" #sidenav mode="side" opened="false"
+      [fixedInViewport]="configService._fixedInViewport" [fixedTopGap]="configService._fixedTopGap"
+      [fixedBottomGap]="configService._fixedBottomGap">
+      <sidenav-menu (toggle)="toggle()"></sidenav-menu>
+    </mat-sidenav>
+
+    <mat-sidenav-content style="background-color: #ffffff !important; box-shadow: inset -5px 2px 2px 0px #0000004d;">
+
+      <div *ngIf="isHome">
+
+        <div class="division">
+          <div
+            style="font-family: Raleway, sans-serif; font-weight: 600; letter-spacing: 0; color: #000000; margin: auto; text-align: center; padding: 10px;">
+            <h2 style="margin: 0; color: #4B0082; font-size: 1cm;">Sistema de monitoramento de biológicos e biossimilares:</h2>
+            <p style="margin: 0; color:#383838;font-size: large;">Desenvolvimento e avaliação de protótipo,</p>
+          </div>
+          <particles *ngIf="particles_show" [params]="particles_params" [style]="particles_style"
+            [width]="particles_width" [height]="particles_height"> </particles>
+        </div>
+
+        <div class="division container-margin">
+          <p style="margin: 0; text-align: justify; text-justify: inter-word;">
+
+          </p>
+        </div>
+
+      </div>
+
+      <router-outlet (activate)='onActivate($event)' (deactivate)='onDeactivate($event)'>
+      </router-outlet>
+
+      <!-- <app-footer style="bottom: 10px;" [theme]="configService.theme"></app-footer> -->
+
+    </mat-sidenav-content>
+
+  </mat-sidenav-container>
+
+  <!--
+  <mat-toolbar id="footer-fix-bottom" style="position: fixed; bottom: 0; left: 0; right: 0;">
+     Footer fix in bottom
+     editar  "<mat-sidenav-container style=" bottom: 0px;" para bottom do tamanho do componente
+  </mat-toolbar>
+   -->
+</ng-container>

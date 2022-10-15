@@ -1,0 +1,33 @@
+<button aria-label="fix" class="hide-small" mat-icon-button
+  (click)="configService._fixedInViewport = !configService._fixedInViewport; closeAll();" matTooltipPosition="above"
+  matTooltip="{{ configService._fixedInViewport ? 'desprender' : 'fixar' }}"
+  style="width: 20px; height: 20px; padding: 0px; border-radius: 50%; float: right; margin: 7px; touch-action: none; user-select: none; -webkit-user-drag: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);">
+  <svg [style.color]="configService._fixedInViewport ? '#008000':'#000000'" style="position: relative;
+      top: -10px;  height: 13px;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
+    <path fill="currentColor"
+      d="M298.028 214.267L285.793 96H328c13.255 0 24-10.745 24-24V24c0-13.255-10.745-24-24-24H56C42.745 0 32 10.745 32 24v48c0 13.255 10.745 24 24 24h42.207L85.972 214.267C37.465 236.82 0 277.261 0 328c0 13.255 10.745 24 24 24h136v104.007c0 1.242.289 2.467.845 3.578l24 48c2.941 5.882 11.364 5.893 14.311 0l24-48a8.008 8.008 0 0 0 .845-3.578V352h136c13.255 0 24-10.745 24-24-.001-51.183-37.983-91.42-85.973-113.733z">
+    </path>
+  </svg>
+</button>
+<div class="menu-link">
+  <mat-accordion #accordion="matAccordion" multi="true">
+
+    <mat-expansion-panel *ngFor="let i_h of items_h; let i=index;let isFirst = first;" (click)="_close()"
+      routerLink="{{i_h.link}}" hideToggle="true" [style.margin-right.px]="isFirst ? 30 : 0">
+      <mat-expansion-panel-header style="padding-right: 0px;" (click)="_close()">
+
+        <mat-panel-title style="margin-right: 0px; padding-bottom: 7px; padding-top: 7px;" (click)="_close()">
+          <mat-icon style="color: #4B0082;" *ngIf="!i_h.content_img" (click)="_close()">{{i_h.content}}</mat-icon>
+          <img [alt]="i_h.label" [src]="i_h.content" *ngIf="i_h.content_img"
+            style="filter: contrast(80%); width: 25px; height: 22px; margin: 0;" (click)="_close()">
+          <span style="color: #000000de; margin-left: 5px;" (click)="_close()">{{i_h.label}}</span>
+        </mat-panel-title>
+
+
+      </mat-expansion-panel-header>
+
+    </mat-expansion-panel>
+
+  </mat-accordion>
+
+</div>

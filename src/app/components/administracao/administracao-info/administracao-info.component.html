@@ -1,0 +1,20 @@
+<mat-card *ngIf="_administracao">
+  <mat-card-content>
+    <div class="division" style="text-align: justify;">
+
+      <div class="block m4">
+        <p style="margin: 0; color: #383838; padding: 0px 0px 7px 0px;">
+          Início: {{_administracao.inicio}}
+        </p>
+        <p style="margin: 0; color: #383838; padding: 0px 0px 7px 0px;">
+          Fim: {{_administracao.fim}}
+        </p>
+        <p
+          style="margin: 0; white-space: nowrap; text-overflow: ellipsis; overflow: hidden; font-size: 14px; color: #0000008a;">
+          Intervalo: {{_administracao.obs}}
+        </p>
+      </div>
+
+    </div>
+  </mat-card-content>
+</mat-card>

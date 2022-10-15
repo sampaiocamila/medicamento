@@ -1,0 +1,5 @@
+<h3 style="text-align: center;">{{sheetService.info.desc1}}</h3>
+<p style="text-align: center;"> {{sheetService.info.desc2}}
+    <mat-icon style="color: #069419;cursor: pointer;" routerLink="{{sheetService.info.link}}"
+        *ngIf="sheetService.info.link" (click)="close()">open_in_new </mat-icon>
+</p>

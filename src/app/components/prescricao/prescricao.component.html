@@ -1,0 +1,39 @@
+<div style="position: relative; min-height: 420px;">
+
+  <div class="division" style="padding: 5px 5px 0 10px; margin-left: 10%; margin-right: 10%;margin-top: 7px;">
+
+    <h2 class="hraleway" style="color: #6959CD!important;">
+      <span style="position: relative;">
+        <mat-icon style="font-size: 28px; color: #6959CD; position: absolute; left: -28px; padding-top: 3px;">
+          photo_filter
+        </mat-icon>
+      </span>
+      Nova Prescrição
+    </h2>
+
+  </div>
+
+  <div class="container-margin">
+
+    <div class="division" style="display: flex;">
+      <div class="block m10" style="margin: auto;">
+
+        <paciente-medico (action)="set_paciente_medico($event)"></paciente-medico>
+
+        <div class="division">
+          <h2 class="raleway" style="color: #6959CD;">
+           Prescrição <br>
+          </h2>
+        </div>
+
+        <medicamento (action)="set_medicamento($event)"></medicamento>
+
+        <div class="division" style="display: flex;padding: 7px;">
+          <button mat-raised-button (click)="prescrever()" style="margin:auto; background-color:#9370DB">REALIZAR PRESCRIÇÃO</button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+</div>

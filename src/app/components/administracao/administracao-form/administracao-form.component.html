@@ -1,0 +1,73 @@
+<form [formGroup]="fb" class="form-margin" *ngIf="fb">
+
+  <div class="division" style="display: flex;">
+    <div class="block m10" style="margin: auto;">
+      <div class="division">
+
+        <responsavel [responsavel]="responsavel"></responsavel>
+
+      </div>
+      <div class="division">
+        <h2 class="raleway" style="color: #6959CD;">
+          Informações da prescrição e dispensação realizada
+        </h2>
+        <paciente-medico [paciente]="_paciente_medico"></paciente-medico>
+
+        <medicamento [medicamento]="medicamento_input"></medicamento>
+
+      </div>
+
+      <div class="division">
+        <div class="division">
+          <h2 class="raleway" style="color: #6959CD;">
+            Controle da administração do medicamento
+          </h2>
+        </div>
+        <mat-form-field class="block m4" hideRequiredMarker="false" floatLabel="always" style="padding-right: 7px;">
+          <mat-label>Início</mat-label>
+          <input aria-label="Início" matInput type="text" placeholder="01/01/2021 13:51" formControlName="inicio">
+          <mat-error align="end" *ngIf="fb.get('inicio')?.invalid">Início obrigatoria</mat-error>
+        </mat-form-field>
+        <mat-form-field class="block m4" hideRequiredMarker="false" floatLabel="always">
+          <mat-label>Fim</mat-label>
+          <input aria-label="Fim" matInput type="text" placeholder="01/01/2021 14:52" formControlName="fim">
+          <mat-error align="end" *ngIf="fb.get('fim')?.invalid">Fim obrigatoria</mat-error>
+        </mat-form-field>
+
+        <div class="division">
+          <mat-form-field class="block m12" hideRequiredMarker="false" floatLabel="always">
+            <mat-label>Observação</mat-label>
+            <input aria-label="obs" matInput type="text" placeholder="Observação" formControlName="obs">
+            <mat-error align="end" *ngIf="fb.get('obs')?.invalid">Observação obrigatoria</mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</form>
+
+<div id="actions"
+  style="align-items: center; display: flex; flex-direction: row; flex-wrap: wrap; justify-content: center; margin-top: 15px;">
+  <div style="margin: 0 auto;">
+
+    <button mat-button style="color: #1d9bbb" *ngIf="fb != null" (click)="back_stepper()" matTooltipPosition="above"
+      matTooltip="Voltar">
+      <mat-icon>arrow_back</mat-icon>
+      <strong>Voltar</strong>
+    </button>
+
+    <button mat-raised-button style="color: #1dbb3f" (click)="next_stepper()" matTooltipPosition="above"
+      matTooltip="Administrado">
+      <mat-icon>done_outline</mat-icon>
+      <strong>Registrar Administração</strong>
+    </button>
+    <button mat-raised-button style="color: #d84b4b" (click)="next_stepper_and_intercorrencia()"
+      matTooltipPosition="above" matTooltip="Administrado">
+      <mat-icon>done_outline</mat-icon>
+      <strong>Registrar Administração com Intercorrência</strong>
+    </button>
+
+  </div>
+</div>
